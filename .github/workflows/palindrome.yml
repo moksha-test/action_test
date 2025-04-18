@@ -1,0 +1,19 @@
+name: Palindrome Checker
+
+on: [push]
+
+jobs:
+  check-palindrome:
+    runs-on: self-hosted  
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Debug - Show directory contents
+        run: |
+          pwd
+          ls -la
+
+      - name: Run palindrome check
+        run: python palindrome.py
